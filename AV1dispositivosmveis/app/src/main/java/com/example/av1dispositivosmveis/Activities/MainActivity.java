@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
                 dbTarefa.salvar(task);
                 listaTarefas();
+                editTextPersonTarefa.setText("");
 
                 Toast.makeText(MainActivity.this,
                         "Dados salvos com sucesso!",
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 task.setTarefa(editTextPersonTarefa.getText().toString());
 
                 dbTarefa.atualizar(task);
+                editTextPersonTarefa.setText("");
 
                 listaTarefas();
             }
