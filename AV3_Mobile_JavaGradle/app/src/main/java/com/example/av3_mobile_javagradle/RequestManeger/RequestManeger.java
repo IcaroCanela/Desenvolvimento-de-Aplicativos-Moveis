@@ -2,7 +2,7 @@ package com.example.av3_mobile_javagradle.RequestManeger;
 
 import android.content.Context;
 
-import com.example.av3_mobile_javagradle.Listeners.ReceitasAleatoriasResponseListener;
+import com.example.av3_mobile_javagradle.Listeners.RandomRecipeResponseListener;
 import com.example.av3_mobile_javagradle.Listeners.RecipesDetailsListener;
 import com.example.av3_mobile_javagradle.Listeners.SimilarRecipesListener;
 import com.example.av3_mobile_javagradle.Models.RecipeDetailsResponse;
@@ -21,7 +21,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
-public class GestordeRequisição {
+public class RequestManeger {
     private Context context;
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl("https://api.spoonacular.com/")
@@ -29,11 +29,11 @@ public class GestordeRequisição {
             .build();
 
 
-    public GestordeRequisição(Context context) {
+    public RequestManeger(Context context) {
         this.context = context;
     }
 
-    public void getReceitasAleatorias(ReceitasAleatoriasResponseListener listener, List<String> tags){
+    public void getReceitasAleatorias(RandomRecipeResponseListener listener, List<String> tags){
         CallReceitasAleatorias callReceitasAleatorias = retrofit.create(CallReceitasAleatorias.class);
         Call<ResAPIReceitasAleatorias> call = callReceitasAleatorias.callReceitasAleatoria(context.getString(R.string.api_key), "10", tags);
         call.enqueue(new Callback<ResAPIReceitasAleatorias>() {

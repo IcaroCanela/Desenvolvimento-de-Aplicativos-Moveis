@@ -16,14 +16,12 @@ import android.widget.Toast;
 
 import com.example.av3_mobile_javagradle.Adapters.FavoriteRecipeAdapter;
 import com.example.av3_mobile_javagradle.Adapters.RecicleViewReceitasAleatoriasAdapter;
-import com.example.av3_mobile_javagradle.DataBase.DAO.FavoriteRecipeDAO;
-import com.example.av3_mobile_javagradle.Listeners.ReceitasAleatoriasResponseListener;
+import com.example.av3_mobile_javagradle.Listeners.RandomRecipeResponseListener;
 import com.example.av3_mobile_javagradle.Listeners.RecipeClickListener;
 import com.example.av3_mobile_javagradle.Models.FavoritesRecipes;
-import com.example.av3_mobile_javagradle.Models.Recipe;
 import com.example.av3_mobile_javagradle.Models.ResAPIReceitasAleatorias;
 import com.example.av3_mobile_javagradle.R;
-import com.example.av3_mobile_javagradle.RequestManeger.GestordeRequisição;
+import com.example.av3_mobile_javagradle.RequestManeger.RequestManeger;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -31,7 +29,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
-    GestordeRequisição maneger;
+    RequestManeger maneger;
     RecicleViewReceitasAleatoriasAdapter adapterReceitasAleatorias;
     FloatingActionButton floatingActionButtonProfile;
     RecyclerView recyclerView;
@@ -86,10 +84,10 @@ public class MainActivity extends AppCompatActivity {
         spinnerTags.setAdapter(arrayAdapter);
         spinnerTags.setOnItemSelectedListener(spinnerSelectedListenner);
 
-        maneger = new GestordeRequisição(this);
+        maneger = new RequestManeger(this);
     }
 
-    private final ReceitasAleatoriasResponseListener receitasAleatoriasResponseListener = new ReceitasAleatoriasResponseListener() {
+    private final RandomRecipeResponseListener receitasAleatoriasResponseListener = new RandomRecipeResponseListener() {
         @Override
         public void buscaOk(ResAPIReceitasAleatorias resposta, String mensagem) {
             progressDialog.dismiss();

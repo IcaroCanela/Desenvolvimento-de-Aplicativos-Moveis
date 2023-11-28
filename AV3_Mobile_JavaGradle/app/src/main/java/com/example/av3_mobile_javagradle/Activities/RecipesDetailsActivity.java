@@ -19,7 +19,7 @@ import com.example.av3_mobile_javagradle.Listeners.SimilarRecipesListener;
 import com.example.av3_mobile_javagradle.Models.RecipeDetailsResponse;
 import com.example.av3_mobile_javagradle.Models.SimilarRecipeResponse;
 import com.example.av3_mobile_javagradle.R;
-import com.example.av3_mobile_javagradle.RequestManeger.GestordeRequisição;
+import com.example.av3_mobile_javagradle.RequestManeger.RequestManeger;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -28,7 +28,7 @@ public class RecipesDetailsActivity extends AppCompatActivity {
     TextView textViewMealName, textViewMealSource, textViewMealSummary;
     ImageView imageViewMealImage;
     RecyclerView recyclerViewMealIngredients, recyclerViewMealSimilar;
-    GestordeRequisição maneger;
+    RequestManeger maneger;
     ProgressDialog progressDialog;
     IngredientsAdapter ingredientsAdapter;
     SimilarRecipeAdapter similarRecipeAdapter;
@@ -49,7 +49,7 @@ public class RecipesDetailsActivity extends AppCompatActivity {
 
         id = Integer.parseInt(getIntent().getStringExtra("id"));
 
-        maneger = new GestordeRequisição(this);
+        maneger = new RequestManeger(this);
         maneger.getRecipesDetails(recipesDetailsListener, id);
         maneger.getSimilarRecipes(similarRecipesListener, id);
 
