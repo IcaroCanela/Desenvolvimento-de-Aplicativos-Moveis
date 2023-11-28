@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/purple"
+    tools:context=".Activities.RecipesDetailsActivity">
+    
+    <androidx.appcompat.widget.Toolbar
+        app:title="Recipe Details"
+        app:titleTextColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"/>
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/textViewMealName"
+                android:text="Lorem ipsum"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:padding="8dp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/textViewMealSource"
+                android:text="Lorem ipsum"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:padding="8dp"
+                android:textStyle="italic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/imageViewMealImage"
+                android:layout_margin="8dp"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"/>
+            <TextView
+                android:id="@+id/textViewMealSummary"
+                android:text="Lorem ipsum"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:textStyle="normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="Similar Recipes"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:padding="8dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewMealSimilar"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="Ingredients"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:padding="8dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewMealIngredients"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

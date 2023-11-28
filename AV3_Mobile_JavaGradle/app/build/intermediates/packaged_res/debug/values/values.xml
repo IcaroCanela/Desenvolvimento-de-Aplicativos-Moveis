@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tags">
+        <item>main course</item>
+        <item>side dish</item>
+        <item>dessert</item>
+        <item>appetizer</item>
+        <item>salad</item>
+        <item>bread</item>
+        <item>breakfast</item>
+        <item>soup</item>
+        <item>beverage</item>
+        <item>sauce</item>
+        <item>marinade</item>
+        <item>fingerfood</item>
+        <item>snack</item>
+        <item>drink</item>
+    </string-array>
+    <color name="black">#FF000000</color>
+    <color name="purple">#673AB7</color>
+    <color name="purple2">#8D58EB</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="api_key">14799a4e22bc43109f6a457d06d63b04</string>
+    <string name="app_name">APItou Receita</string>
+    <style name="Base.Theme.AV3_Mobile_JavaGradle" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        <item name="android:editTextColor">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+        
+    </style>
+    <style name="Theme.AV3_Mobile_JavaGradle" parent="Base.Theme.AV3_Mobile_JavaGradle"/>
+</resources>

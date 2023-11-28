@@ -1,0 +1,3 @@
+com.example.av3_mobile_javagradle.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme

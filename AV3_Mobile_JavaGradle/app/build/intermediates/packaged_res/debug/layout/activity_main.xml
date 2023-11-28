@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple"
+    android:orientation="vertical"
+    tools:context=".Activities.MainActivity">
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButtonProfile"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_profile"
+        android:backgroundTint="@color/purple2"
+        android:tint="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"/>
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/textViewAppName"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="8dp"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+
+
+            <Spinner
+                android:id="@+id/spinnerTags"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:entries="@array/tags"
+                android:gravity="center" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@color/purple2"
+        app:cardElevation="8dp">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/seacrhViewHome"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:iconifiedByDefault="false"
+            app:queryHint="Seach your recipe here"
+            app:searchIcon="@drawable/ic_search" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewReceitasAleatorias"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp" />
+
+</LinearLayout>

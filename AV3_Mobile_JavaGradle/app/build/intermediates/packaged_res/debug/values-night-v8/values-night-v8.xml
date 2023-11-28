@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Base.Theme.AV3_Mobile_JavaGradle" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        <item name="android:editTextColor">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+        
+    </style>
+</resources>
