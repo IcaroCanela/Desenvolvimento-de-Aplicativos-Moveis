@@ -1,4 +1,4 @@
-package com.example.av3_mobile_javagradle;
+package com.example.av3_mobile_javagradle.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -14,11 +14,17 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.av3_mobile_javagradle.Adapters.FavoriteRecipeAdapter;
 import com.example.av3_mobile_javagradle.Adapters.RecicleViewReceitasAleatoriasAdapter;
+import com.example.av3_mobile_javagradle.DataBase.DAO.FavoriteRecipeDAO;
 import com.example.av3_mobile_javagradle.Listeners.ReceitasAleatoriasResponseListener;
 import com.example.av3_mobile_javagradle.Listeners.RecipeClickListener;
+import com.example.av3_mobile_javagradle.Models.FavoritesRecipes;
+import com.example.av3_mobile_javagradle.Models.Recipe;
 import com.example.av3_mobile_javagradle.Models.ResAPIReceitasAleatorias;
+import com.example.av3_mobile_javagradle.R;
 import com.example.av3_mobile_javagradle.RequestManeger.GestordeRequisição;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,15 +33,28 @@ public class MainActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     GestordeRequisição maneger;
     RecicleViewReceitasAleatoriasAdapter adapterReceitasAleatorias;
+    FloatingActionButton floatingActionButtonProfile;
     RecyclerView recyclerView;
     Spinner spinnerTags;
     List<String> tags = new ArrayList<>();
     SearchView searchViewHome;
+    List<FavoritesRecipes> favoritesRecipesList;
+    FavoriteRecipeAdapter favoriteRecipeAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        floatingActionButtonProfile = findViewById(R.id.floatingActionButtonProfile);
+
+        floatingActionButtonProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FavoritesRecipesActivity.class);
+                startActivity(intent);
+            }
+        });
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Carregando...");
@@ -68,8 +87,6 @@ public class MainActivity extends AppCompatActivity {
         spinnerTags.setOnItemSelectedListener(spinnerSelectedListenner);
 
         maneger = new GestordeRequisição(this);
-//        maneger.getReceitasAleatorias(receitasAleatoriasResponseListener, );
-//        progressDialog.show();
     }
 
     private final ReceitasAleatoriasResponseListener receitasAleatoriasResponseListener = new ReceitasAleatoriasResponseListener() {

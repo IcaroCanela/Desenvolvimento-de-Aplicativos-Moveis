@@ -1,4 +1,4 @@
-package com.example.av3_mobile_javagradle;
+package com.example.av3_mobile_javagradle.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -18,6 +18,7 @@ import com.example.av3_mobile_javagradle.Listeners.RecipesDetailsListener;
 import com.example.av3_mobile_javagradle.Listeners.SimilarRecipesListener;
 import com.example.av3_mobile_javagradle.Models.RecipeDetailsResponse;
 import com.example.av3_mobile_javagradle.Models.SimilarRecipeResponse;
+import com.example.av3_mobile_javagradle.R;
 import com.example.av3_mobile_javagradle.RequestManeger.GestordeRequisição;
 import com.squareup.picasso.Picasso;
 

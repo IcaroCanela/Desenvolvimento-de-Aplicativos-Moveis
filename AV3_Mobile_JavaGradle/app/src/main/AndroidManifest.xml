@@ -15,10 +15,13 @@
         android:theme="@style/Theme.AV3_Mobile_JavaGradle"
         tools:targetApi="31">
         <activity
-            android:name=".RecipesDetailsActivity"
+            android:name=".Activities.FavoritesRecipesActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.RecipesDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
