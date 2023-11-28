@@ -10,7 +10,7 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButtonProfile"
         android:layout_gravity="center"
-        android:src="@drawable/ic_profile"
+        android:src="@drawable/ic_profile_favorites"
         android:backgroundTint="@color/purple2"
         android:tint="@android:color/white"
         android:layout_width="wrap_content"
